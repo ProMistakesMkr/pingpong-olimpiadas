@@ -35,8 +35,6 @@ public class rectangulo {
 
 	}
 
-	
-
 	public void keyPressed(PApplet app) {
 
 		switch (app.key) {
