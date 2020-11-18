@@ -4,6 +4,7 @@ public class rectangulo2 {
 	int posX2, posY2, lado1, lado2;
 	private int r, g, b;
 	private boolean crash, mov, mov2;
+	int mitad = 250;
 
 	public rectangulo2() {
 
@@ -110,6 +111,14 @@ public class rectangulo2 {
 
 	public void setLado2(int lado2) {
 		this.lado2 = lado2;
+	}
+
+	public int getMitad() {
+		return mitad;
+	}
+
+	public void setMitad(int mitad) {
+		this.mitad = mitad;
 	}
 
 }

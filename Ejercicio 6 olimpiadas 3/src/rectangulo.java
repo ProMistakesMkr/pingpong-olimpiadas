@@ -4,6 +4,7 @@ public class rectangulo {
 	int posX, posY, lado1, lado2;
 	private int r, g, b;
 	private boolean crash, mov, mov2;
+	int mitad = 250;
 
 	public rectangulo() {
 
@@ -14,10 +15,11 @@ public class rectangulo {
 		this.mov = false;
 		this.mov2 = false;
 		this.crash = false;
+		this.mitad=250;
 
 	}
 
-	public rectangulo(int posX, int posY, int lado1, int lado2) {
+	public rectangulo(int posX, int mitad, int lado1, int lado2) {
 
 		this.posX = posX;
 		this.posY = posY;
@@ -26,6 +28,7 @@ public class rectangulo {
 		this.r = 0;
 		this.g = 255;
 		this.b = 0;
+		this.mitad=mitad;
 
 	}
 
@@ -40,13 +43,13 @@ public class rectangulo {
 		switch (app.key) {
 		case 'w':
 
-			posY -= 10;
+			mitad -= 10;
 
 			break;
 
 		case 's':
 
-			posY += 10;
+			mitad += 10;
 
 			break;
 
@@ -112,6 +115,14 @@ public class rectangulo {
 
 	public void setB(int b) {
 		this.b = b;
+	}
+
+	public int getMitad() {
+		return mitad;
+	}
+
+	public void setMitad(int mitad) {
+		this.mitad = mitad;
 	}
 
 }

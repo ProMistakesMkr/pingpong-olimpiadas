@@ -21,20 +21,35 @@ public class PongPong extends PApplet {
 	rectangulo2 sel;
 
 	bolita bola;
+	boolean movright;
+	boolean movdown;
+
+	int speedside = 3;
+	int speedvertical = 4;
 
 	@Override
 	public void setup() {
 
-		player = new rectangulo(20, 210, 15, 90);
-		player2 = new rectangulo2(465, 210, 15, 90);
+		//int mitad = player.getMitad();
+		//int mitad2 = player2.getMitad();
+
+		player = new rectangulo(20, 250, 15, 90);
+		player2 = new rectangulo2(465, 250, 15, 90);
 		sel = null;
 
-		bola = new bolita(250, 250, 25);
+		bola = new bolita(width / 2, height / 2, 25);
 	}
 
 	@Override
 	public void draw() {
+	/*	int mitad1 = player.getMitad();
+		int mitad22 = player2.getMitad();*/
+
+		/*int b1 = bola.getPosX();
+		int b2 = bola.getPosY();*/
 		background(255);
+		int score = bola.getScore1();
+		int score2 = bola.getScore2();
 
 		player.pintar(this);
 		player2.pintar(this);
@@ -42,6 +57,25 @@ public class PongPong extends PApplet {
 
 		bola.mover();
 
+		rectMode(CENTER);
+
+		text("PONGPONG", 220, 20);
+		rectMode(CORNER);
+
+		text(score, 150, 20);
+		text(score2, 300, 20);
+
+		/*if (b1 >= 465 && b2 > mitad22 && b2 < (mitad22 + 100)) {
+
+			movright = false;
+
+		}
+
+		if (b1 <= 15 && b2 > mitad1 && b2 < (mitad1 + 100)) {
+
+			movright = true;
+
+		}*/
 	}
 
 	public void keyPressed() {
