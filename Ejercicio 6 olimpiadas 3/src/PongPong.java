@@ -67,7 +67,8 @@ public class PongPong extends PApplet {
 		}
 
 		if (dist(mouseX, mouseY, b1, b2) < diam) {
-			mov = true;
+
+			bola.setMov(!mov);
 		}
 
 	}
