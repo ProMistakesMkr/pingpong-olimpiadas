@@ -40,13 +40,13 @@ public class rectangulo {
 		switch (app.key) {
 		case 'w':
 
-			posY -= 5;
+			posY -= 10;
 
 			break;
 
 		case 's':
 
-			posY += 5;
+			posY += 10;
 
 			break;
 

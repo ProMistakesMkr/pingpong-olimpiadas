@@ -20,13 +20,16 @@ public class PongPong extends PApplet {
 
 	rectangulo2 sel;
 
+	bolita bola;
+
 	@Override
 	public void setup() {
 
-		player = new rectangulo(20, 210, 15, 80);
-		player2 = new rectangulo2(480, 210, 15, 80);
+		player = new rectangulo(20, 210, 15, 90);
+		player2 = new rectangulo2(465, 210, 15, 90);
 		sel = null;
 
+		bola = new bolita(250, 250, 25);
 	}
 
 	@Override
@@ -35,6 +38,9 @@ public class PongPong extends PApplet {
 
 		player.pintar(this);
 		player2.pintar(this);
+		bola.pintar(this);
+
+		bola.mover();
 
 	}
 
@@ -51,9 +57,17 @@ public class PongPong extends PApplet {
 		int yC2 = player2.getPosY2();
 		int lC1 = player2.getLado1();
 		int lC2 = player2.getLado2();
+		int b1 = bola.getPosX();
+		int b2 = bola.getPosY();
+		int diam = bola.getDiametro();
+		boolean mov = bola.isMov();
 
 		if (dist(mouseX, mouseY, xC2, yC2) < lC2 && dist(mouseX, mouseY, xC2 + 20, yC2 + 80) < lC2) {
 			sel = player2;
+		}
+
+		if (dist(mouseX, mouseY, b1, b2) < diam) {
+			mov = true;
 		}
 
 	}
