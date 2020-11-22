@@ -19,7 +19,7 @@ public class rectangulo {
 
 	}
 
-	public rectangulo(int posX, int mitad, int lado1, int lado2) {
+	public rectangulo(int posX, int posY, int lado1, int lado2) {
 
 		this.posX = posX;
 		this.posY = posY;
@@ -43,13 +43,13 @@ public class rectangulo {
 		switch (app.key) {
 		case 'w':
 
-			mitad -= 10;
+			posY -= 10;
 
 			break;
 
 		case 's':
 
-			mitad += 10;
+			posY += 10;
 
 			break;
 

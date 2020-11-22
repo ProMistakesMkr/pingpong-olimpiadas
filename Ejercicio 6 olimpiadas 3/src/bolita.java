@@ -13,6 +13,8 @@ public class bolita {
 	int speedvertical = 4;
 	int score1 = 0;
 	int score2 = 0;
+	rectangulo player;
+	//rectagulo2 player2;
 
 	public bolita(int posX, int posY, int diametro) {
 		this.posX = posX;
@@ -69,6 +71,18 @@ public class bolita {
 			posY = 500 / 2;
 
 		}
+		
+		/*if (bx >= 465 && by > mitad2 && by < (mitad2 + 100)) {
+
+		movright = false;
+
+	}
+
+	if (posX <= 15 && posY > player.getMitad() && posY < (player.getMitad() + 100)) {
+
+		movright = true;
+
+	}*/
 
 		/*
 		 * if (mov == true) { posX += 10; posY +=

@@ -26,14 +26,16 @@ public class PongPong extends PApplet {
 
 	int speedside = 3;
 	int speedvertical = 4;
+	int mitad = 250;
+	int mitad2;
 
 	@Override
 	public void setup() {
 
-		//int mitad = player.getMitad();
-		//int mitad2 = player2.getMitad();
+		// player.setMitad(mitad);
+		// int mitad2 = player2.setMitad();
 
-		player = new rectangulo(20, 250, 15, 90);
+		player = new rectangulo(20, mitad, 15, 90);
 		player2 = new rectangulo2(465, 250, 15, 90);
 		sel = null;
 
@@ -42,11 +44,12 @@ public class PongPong extends PApplet {
 
 	@Override
 	public void draw() {
-	/*	int mitad1 = player.getMitad();
-		int mitad22 = player2.getMitad();*/
 
-		/*int b1 = bola.getPosX();
-		int b2 = bola.getPosY();*/
+		int posYrect1 = player.getPosY();
+		int posYrect2 = player2.getPosY2();
+
+		int bx = bola.getPosX();
+		int by = bola.getPosY();
 		background(255);
 		int score = bola.getScore1();
 		int score2 = bola.getScore2();
@@ -65,17 +68,21 @@ public class PongPong extends PApplet {
 		text(score, 150, 20);
 		text(score2, 300, 20);
 
-		/*if (b1 >= 465 && b2 > mitad22 && b2 < (mitad22 + 100)) {
+		if (bx >= 465 && by > posYrect2 && by < (posYrect2 + 100)) {
 
-			movright = false;
+			bola.setMovright(false);
 
 		}
 
-		if (b1 <= 15 && b2 > mitad1 && b2 < (mitad1 + 100)) {
+		if (bx <= 19 && by > posYrect1 && by < (posYrect1 + 90)) {
 
-			movright = true;
+			bola.setMovright(true);
 
-		}*/
+		}
+		int pruebay = player.getPosY();
+
+		// System.out.println(pruebay);
+		System.out.println(bola.movright);
 	}
 
 	public void keyPressed() {
